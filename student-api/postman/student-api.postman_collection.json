@@ -1,0 +1,124 @@
+{
+    "info": {
+      "name": "Student API",
+      "_postman_id": "unique-id-here",
+      "description": "Collection for testing the Student Grade Management API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get All Students",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost/student-api/public/index.php?action=all",
+            "protocol": "http",
+            "host": ["localhost"],
+            "path": ["student-api", "public", "index.php"],
+            "query": [
+              {
+                "key": "action",
+                "value": "all"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Add a Student",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"name\": \"John Doe\",\n  \"midterm_score\": 80,\n  \"final_score\": 90\n}"
+          },
+          "url": {
+            "raw": "http://localhost/student-api/public/index.php?action=add",
+            "protocol": "http",
+            "host": ["localhost"],
+            "path": ["student-api", "public", "index.php"],
+            "query": [
+              {
+                "key": "action",
+                "value": "add"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Get Student by ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost/student-api/public/index.php?id=1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "path": ["student-api", "public", "index.php"],
+            "query": [
+              {
+                "key": "id",
+                "value": "1"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Update a Student",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"id\": 1,\n  \"midterm_score\": 85,\n  \"final_score\": 95\n}"
+          },
+          "url": {
+            "raw": "http://localhost/student-api/public/index.php?action=update",
+            "protocol": "http",
+            "host": ["localhost"],
+            "path": ["student-api", "public", "index.php"],
+            "query": [
+              {
+                "key": "action",
+                "value": "update"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Delete a Student",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost/student-api/public/index.php?id=1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "path": ["student-api", "public", "index.php"],
+            "query": [
+              {
+                "key": "id",
+                "value": "1"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+  
