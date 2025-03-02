@@ -44,9 +44,18 @@ My Postman have the following collections:
 > PUT Update a Student
 > DEL Delete a Student
 
-for the 
-final_grade     - ALTER TABLE `students` CHANGE `final_grade` `final_grade` FLOAT AS (0.4 * `midterm_score` + 0.6 * `final_score`) STORED;
-status          - ALTER TABLE `students` CHANGE `status` `status` VARCHAR(10) CHARACTER SET utf8mb4 AS (if(`final_grade` >= 75,'Pass','Fail')) STORED;
+SQL QUERY DONE:
+------------------------------------------------------ > FOR THE DATABASE 
+CREATE DATABASE student_management;
+------------------------------------------------------ > FOR THE TABLE INSIDE THE DATABASE
+CREATE TABLE students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    midterm_score FLOAT NOT NULL,
+    final_score FLOAT NOT NULL,
+    final_grade FLOAT GENERATED ALWAYS AS ((0.4 * midterm_score) + (0.6 * final_score)) STORED,
+    status VARCHAR(10) GENERATED ALWAYS AS (IF(final_grade >= 75, 'Pass', 'Fail')) STORED
+);
 
 
 
