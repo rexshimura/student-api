@@ -44,7 +44,9 @@ My Postman have the following collections:
 > PUT Update a Student
 > DEL Delete a Student
 
-
+for the 
+final_grade     - ALTER TABLE `students` CHANGE `final_grade` `final_grade` FLOAT AS (0.4 * `midterm_score` + 0.6 * `final_score`) STORED;
+status          - ALTER TABLE `students` CHANGE `status` `status` VARCHAR(10) CHARACTER SET utf8mb4 AS (if(`final_grade` >= 75,'Pass','Fail')) STORED;
 
 
 
