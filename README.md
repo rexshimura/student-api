@@ -57,7 +57,8 @@ CREATE TABLE students (
     status VARCHAR(10) GENERATED ALWAYS AS (IF(final_grade >= 75, 'Pass', 'Fail')) STORED
 );
 
-
+After Installing and Settig up my Composer, I input this to my terminal
+C:\composer\composer.bat require vlucas/phpdotenv
 
 
 
